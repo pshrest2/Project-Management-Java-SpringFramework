@@ -25,7 +25,7 @@ public class ProjectController {
 		Project aProject = new Project();
 		
 		model.addAttribute("project", aProject);
-		return "new-project.html";
+		return "projects/new-project.html";
 	}
 	
 	@PostMapping("/save")
