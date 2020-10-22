@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+	
+<body>
+	
+	<div class="container">
+		<h3>ADD Employee</h3>			
+	
+		<form action="/employee/save" th:object="${employee}" method="POST">
+			
+			<input type="text" placeholder="First Name" th:field="${employee.firstName}">
+			<input type="text" placeholder="Last Name" th:field="${employee.lastName}">
+			<input type="text" placeholder="Email address" th:field="${employee.email}">
+
+			<button type="submit">Add Employee</button>
+		</form>
+	</div>
+
+</body>
+<!-- 	    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://cdn.rawgit.com/crlcu/multiselect/v2.5.1/dist/js/multiselect.min.js"></script>
+ -->		
+</html>
