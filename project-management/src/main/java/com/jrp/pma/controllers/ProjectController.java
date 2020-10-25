@@ -48,17 +48,21 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/save")
-	public String createProjectForm(Project project, @RequestParam List<Long> employees, Model model) {
+	public String createProjectForm(Project project, /*@RequestParam List<Long> employees,*/ Model model) {
 		//this should handel saving to the database...
 		proRepo.save(project);	
 		
-		//add to employee table
-		Iterable<Employee> chosenEmployees = empRepo.findAllById(employees);
 		
-		for(Employee emp: chosenEmployees) {
-			emp.setProject(project);
-			empRepo.save(emp);
-		}
+		
+		//No need to do this if you have join table
+		/*
+		 * //add to employee table Iterable<Employee> chosenEmployees =
+		 * empRepo.findAllById(employees);
+		 * 
+		 * for(Employee emp: chosenEmployees) { emp.setProject(project);
+		 * empRepo.save(emp); }
+		 */
+		
 		//user a redirect to prevent duplicate submissions
 		return "redirect:/projects";
 	}	
